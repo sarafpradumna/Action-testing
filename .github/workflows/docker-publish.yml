@@ -37,5 +37,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/sarafpradumna/action-testing:latest
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ghcr.io/pradumnasaraf/action-testing:latest
