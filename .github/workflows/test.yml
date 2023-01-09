@@ -7,4 +7,12 @@ jobs:
     steps:
       - name: List files in the repository
         uses: actions/checkout@v3
-      - run: pwd & ls
+      - run: |
+          mkdir test
+          cd test
+          touch a.txt
+      
+      - name:  commit the files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Commit by '${{ github.actor }}'"
