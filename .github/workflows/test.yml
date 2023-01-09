@@ -1,13 +1,19 @@
-name: GitHub Actions Demo
-run-name: testing out GitHub Actions 🚀
-on: [push]
+name: Post Request to API
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened, edited]
+    
 jobs:
 
-  add-health-message:
+  post-health-message:
+    if: contains(github.event.issue.labels.*.name, 'testimonial')
     runs-on: ubuntu-latest
+    name: POST Health Message
     
     steps:
-      - name: POST data to DB
+      - name: Sending a POST Request
         uses: fjogeleit/http-request-action@v1
         with:
           url: 'https://opensourceapi.vercel.app/api/health'
