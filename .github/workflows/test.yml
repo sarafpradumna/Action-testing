@@ -5,10 +5,15 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Add data to DB
+    
+    
+      - name: POST data to DB
         uses: fjogeleit/http-request-action@v1
         with:
           url: 'https://opensourceapi.vercel.app/api/health'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
           data: '{"message": "Drink lots of water - Pradumna"}'
+      - name: Show Response
+        run: |
+          echo ${{ steps.myRequest.outputs.response }}
