@@ -14,7 +14,7 @@ on:
 
 jobs:
   welcome:
-    if: ${{ github.event.label.name == 'dev-tip' }}
+    if: ${{ github.event.label.name != 'dev-tip' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
