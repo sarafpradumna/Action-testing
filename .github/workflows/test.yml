@@ -2,10 +2,11 @@ name: GitHub Actions Demo
 run-name: testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+
+  add-health-message:
     runs-on: ubuntu-latest
-    steps:
     
+    steps:
       - name: POST data to DB
         uses: fjogeleit/http-request-action@v1
         with:
@@ -13,7 +14,6 @@ jobs:
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
           data: '{"message": "Drink lots of water - PraduSmnaAA"}'
-          
       - name: Show Response
         run: |
           echo ${{ steps.myRequest.outputs.response }}
