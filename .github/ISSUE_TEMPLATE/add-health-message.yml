@@ -1,5 +1,5 @@
-name: 🏆 Dev Message
-title: New Message
+name: Devloper Tip
+title: Add new Developer Tip
 description: Add a tech message to the OpenSource API
 labels: ["dev"]
 body:
