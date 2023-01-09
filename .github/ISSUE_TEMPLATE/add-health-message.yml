@@ -1,6 +1,6 @@
 name: Add a new Developer Tip
 title: New Developer Tip
-description: Add a tech message to the OpenSource API
+description: Include your Tip to the OpenSource API database.
 labels: ["dev-tip"]
 body:
   - type: textarea
