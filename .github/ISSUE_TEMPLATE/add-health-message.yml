@@ -1,15 +1,8 @@
-name: 🏆 Testimonial
-title: New Testimonial
-description: Make a testimonial for the LinkFree user
+name: 🏆 Dev Message
+title: New Message
+description: Add a tech message to the OpenSource API
 labels: ["dev"]
 body:
-  - type: input
-    id: title
-    attributes:
-      label: Title
-      description: Please provide a title for the testimonial
-    validations:
-      required: true
   - type: textarea
     id: description
     attributes:
