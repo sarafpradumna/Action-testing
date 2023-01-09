@@ -14,7 +14,7 @@ on:
 
 jobs:
   welcome:
-    if: contains(github.event.issue.labels.*.name, 'dev-tip') == 'false'
+    if: github.event.issue.labels.*.name != 'dev-tip'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
