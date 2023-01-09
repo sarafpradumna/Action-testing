@@ -4,7 +4,7 @@ description: Add a tech message to the OpenSource API
 labels: ["dev"]
 body:
   - type: textarea
-    id: description
+    id: message
     attributes:
       label: Dev Message
       description: Add your message which you want to add to the API
