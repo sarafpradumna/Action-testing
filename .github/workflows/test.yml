@@ -11,4 +11,4 @@ jobs:
           url: 'https://opensourceapi.vercel.app/api/health'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{"message": "Drink lots of water - Pradumna"}'
+          data: '{"mesage": "Drink lots of water - Pradumna"}'
