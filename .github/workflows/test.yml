@@ -34,4 +34,3 @@ jobs:
       - name: Printing out the Response
         run: |
           echo ${{ steps.myRequest.outputs.response }}
-          echo ${{ steps.myRequest.outputs.headers }}
