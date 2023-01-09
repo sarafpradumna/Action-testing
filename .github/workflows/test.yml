@@ -18,7 +18,6 @@ jobs:
         id: issue-parser
         with:
           template-path: .github/ISSUE_TEMPLATE/add-health-message.yml
-          
       - run: echo $FAVORITE_DISH
         env:
           FAVORITE_DISH: ${{ steps.issue-parser.outputs.issueparser_message }}
