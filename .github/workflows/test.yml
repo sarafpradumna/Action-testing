@@ -6,14 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    
       - name: POST data to DB
         uses: fjogeleit/http-request-action@v1
         with:
           url: 'https://opensourceapi.vercel.app/api/health'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{"message": "Drink lots of water - Pradumna"}'
-      - name: Show Response
-        run: |
-          echo ${{ steps.myRequest.outputs.response }}
+          data: '{"message": "Drink lots of water - PradumnaAA"}'
+#       - name: Show Response
+#         run: |
+#           echo ${{ steps.myRequest.outputs.response }}
