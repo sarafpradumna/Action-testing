@@ -8,20 +8,30 @@ on:
 jobs:
 
   post-health-message:
-    if: contains(github.event.issue.labels.*.name, 'testimonial')
+    if: contains(github.event.issue.labels.*.name, 'dev')
     runs-on: ubuntu-latest
     name: POST Health Message
-    
     steps:
-      - name: Sending a POST Request
-        uses: fjogeleit/http-request-action@v1
-        id: myRequest
+    
+      - name: Getting data from Issue Form
+      - uses: stefanbuck/github-issue-parser@v3
+        id: issue-parser
         with:
-          url: 'https://opensourceapi.vercel.app/api/health'
-          method: 'POST'
-          customHeaders: '{"Content-Type": "application/json"}'
-          data: '{"message": "Drink lots of water - PraduSmnaAA"}'
-      - name: Show Response
-        run: |
-          echo ${{ steps.myRequest.outputs.response }}
-          echo ${{ steps.myRequest.outputs.headers }}
+          template-path: .github/ISSUE_TEMPLATE/add-health-message.yml
+          
+      - run: echo $FAVORITE_DISH
+        env:
+          FAVORITE_DISH: ${{ steps.issue-parser.outputs.issueparser_message }}
+
+#       - name: Sending a POST Request
+#         uses: fjogeleit/http-request-action@v1
+#         id: myRequest
+#         with:
+#           url: 'https://opensourceapi.vercel.app/api/health'
+#           method: 'POST'
+#           customHeaders: '{"Content-Type": "application/json"}'
+#           data: '{"message": "Drink lots of water - PraduSmnaAA"}'
+#       - name: Show Response
+#         run: |
+#           echo ${{ steps.myRequest.outputs.response }}
+#           echo ${{ steps.myRequest.outputs.headers }}
