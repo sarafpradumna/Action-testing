@@ -9,7 +9,7 @@ jobs:
 
   post-devtip:
     name: Add data to DB via POST Request
-    if: contains(github.event.issue.labels.*.name, 'dev-tip')
+    if: contains(github.event.issue.labels.*.name, 'dev')
     runs-on: ubuntu-latest
 
     
