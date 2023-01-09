@@ -8,10 +8,9 @@ on:
 jobs:
 
   post-health-message:
-    name: Add Issue form data to DB via POST Request
-    
     if: contains(github.event.issue.labels.*.name, 'dev-tip')
     runs-on: ubuntu-lates
+    name: Add data to DB via POST Request
     
     steps:
       - name: Cloning the repo
