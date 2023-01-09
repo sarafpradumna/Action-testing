@@ -8,4 +8,5 @@ jobs:
       - name: List files in the repository
         uses: actions/checkout@v3
       - run: |
-            ls ${{ github.workspace }}
+            cd ${{ github.workspace }}
+            touch test.txt
