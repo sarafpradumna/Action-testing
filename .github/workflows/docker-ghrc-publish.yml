@@ -8,3 +8,4 @@ jobs:
       - name: List files in the repository
         run: |
           touch test.txt
+          ls -l
