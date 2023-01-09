@@ -34,4 +34,4 @@ jobs:
       - name: Printing out the Response
         run: |
           echo ${{ fromJson(steps.myRequest.outputs.response).status }}
-          echo "With ID: ${{ fromJson(steps.myRequest.outputs.response).status.data.id }}"
+          echo "With ID: ${{ fromJson(steps.myRequest.outputs.response).status.data.health.id }}"
