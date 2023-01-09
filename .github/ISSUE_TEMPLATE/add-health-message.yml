@@ -1,4 +1,4 @@
-name: Add new Developer Tip
+name: Add a new Developer Tip
 title: New Developer Tip
 description: Add a tech message to the OpenSource API
 labels: ["dev-tip"]
