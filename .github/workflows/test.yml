@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Sending a POST Request
         uses: fjogeleit/http-request-action@v1
+        id: myRequest
         with:
           url: 'https://opensourceapi.vercel.app/api/health'
           method: 'POST'
