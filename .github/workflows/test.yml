@@ -14,7 +14,8 @@ jobs:
     steps:
     
       - name: Getting data from Issue Form
-        uses: stefanbuck/github-issue-parser@v3
+      - uses: actions/checkout@v3
+      - uses: stefanbuck/github-issue-parser@v3
         id: issue-parser
         with:
           template-path: .github/ISSUE_TEMPLATE/add-health-message.yml
