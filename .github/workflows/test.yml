@@ -8,9 +8,10 @@ on:
 jobs:
 
   post-health-message:
-    if: contains(github.event.issue.labels.*.name, 'dev')
-    runs-on: ubuntu-latest
-    name: POST Health Message
+    name: Add Issue form data to DB via POST Request
+    
+    if: contains(github.event.issue.labels.*.name, 'dev-tip')
+    runs-on: ubuntu-lates
     
     steps:
       - name: Cloning the repo
@@ -22,7 +23,7 @@ jobs:
         with:
           template-path: .github/ISSUE_TEMPLATE/add-health-message.yml
           
-      - name: Sending a POST Request
+      - name: Sending a POST Request to API
         uses: fjogeleit/http-request-action@v1
         id: myRequest
         with:
@@ -31,7 +32,10 @@ jobs:
           customHeaders: '{"Content-Type": "application/json"}'
           data: '{"message": "${{ steps.issue-parser.outputs.issueparser_message }}"}'
           
-      - name: Printing out the Response
+      - name: Printing out the response
         run: |
           echo ${{ fromJson(steps.myRequest.outputs.response).status }}
           echo "With ID: ${{ fromJson(steps.myRequest.outputs.response).data.devtip._id }}"
+
+      - name: Close Issue
+        uses: YiiGuxing/close-issue@v2.1.0
