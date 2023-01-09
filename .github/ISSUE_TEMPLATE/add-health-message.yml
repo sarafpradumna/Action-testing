@@ -6,7 +6,7 @@ body:
   - type: textarea
     id: message
     attributes:
-      label: Dev Message
-      description: Add your message which you want to add to the API
+      label: Tip
+      description: Add your message you want to include in the API.
     validations:
       required: true
