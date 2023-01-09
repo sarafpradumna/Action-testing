@@ -1,7 +1,7 @@
 name: Devloper Tip
 title: Add new Developer Tip
 description: Add a tech message to the OpenSource API
-labels: ["dev"]
+labels: ["dev-tip"]
 body:
   - type: textarea
     id: message
