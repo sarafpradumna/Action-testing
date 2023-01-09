@@ -7,7 +7,7 @@ on:
     
 jobs:
 
-  post-health-message:
+  post-devtip:
     name: Add data to DB via POST Request
     if: contains(github.event.issue.labels.*.name, 'dev-tip')
     runs-on: ubuntu-latest
