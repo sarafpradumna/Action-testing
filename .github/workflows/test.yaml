@@ -10,8 +10,6 @@ jobs:
       - run: printenv
       
       - name: Sending a POST Request to API
-        env:
-          TEST: ${{fromJson(steps.myRequest.outputs.response).data.devtip._id}}
         uses: fjogeleit/http-request-action@v1
         id: myRequest
         with:
