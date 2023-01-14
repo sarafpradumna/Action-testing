@@ -17,7 +17,12 @@ jobs:
           method: "POST"
           customHeaders: '{"Content-Type": "application/json"}'
           data: '{"message": "test message"}'
-
+        env:
+          TEST: ${{fromJson(steps.myRequest.outputs.response).data.devtip._id}}
+        
+      - run: printenv
+          
+    
       - name: Printing out the response
         run: |
           echo ${{ fromJson(steps.myRequest.outputs.response).status }}
