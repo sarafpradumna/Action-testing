@@ -1,11 +1,24 @@
 on:
   push:
     
-
 jobs:
+
 
   test:
     runs-on: ubuntu-latest
     steps:
       - run: printenv
-    
+      
+      - name: Sending a POST Request to API
+        uses: fjogeleit/http-request-action@v1
+        id: myRequest
+        with:
+          url: "https://ossapi.vercel.app/"
+          method: "POST"
+          customHeaders: '{"Content-Type": "application/json"}'
+          data: '{"message": "test message"}'
+
+      - name: Printing out the response
+        run: |
+          echo ${{ fromJson(steps.myRequest.outputs.response).status }}
+          echo "With ID: ${{ fromJson(steps.myRequest.outputs.response).data.devtip._id }}"
