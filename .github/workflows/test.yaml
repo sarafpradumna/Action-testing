@@ -9,7 +9,6 @@ jobs:
         run: echo "Hello World"
 
   test:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Get the version
