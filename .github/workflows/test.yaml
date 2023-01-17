@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get the version
-        run: ${{github}}
+        run: echo "${{github}}"
