@@ -7,3 +7,9 @@ jobs:
     steps:
       - name: Get the version
         run: echo ${{github.event_name}}
+      - run: echo ${{github.sha}}   
+      - run: echo ${{github.ref}}   
+      - run: echo ${{github.event}}   
+      - run: echo ${{github.actor}}   
+      - run: echo ${{github.job}}   
+      - run: echo ${{github.repository}}   
