@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get the version
-        run: echo ${{github}}
+        run: echo ${{github.event_name}}
