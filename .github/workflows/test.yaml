@@ -5,11 +5,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get the version
-        run: echo ${{github.event_name}}
-      - run: echo ${{github.sha}}   
-      - run: echo ${{github.ref}}   
-      - run: echo ${{github.event}}   
-      - run: echo ${{github.actor}}   
-      - run: echo ${{github.job}}   
-      - run: echo ${{github.repository}}   
+#       - run: echo 1 ${{github.event_name}}
+#       - run: echo 2 ${{github.sha}}   
+#       - run: echo 3 ${{github.ref}}   
+      - run: echo 4 ${{fromJSON(github.event)}}   
+#       - run: echo 5 ${{github.actor}}   
+#       - run: echo 6 ${{github.job}}   
+#       - run: echo 7 ${{github.repository}}   
