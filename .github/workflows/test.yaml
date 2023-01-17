@@ -2,8 +2,15 @@ on:
   push:
     
 jobs:
-
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World!"
+      - name: Get the version
+        run: echo "Hello World"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the version
+        run: echo "Hello World"
