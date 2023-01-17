@@ -6,10 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get the version
-        run: echo "Hello World"
-
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get the version
-        run: echo "Hello World"
+        run: ${{github}}
