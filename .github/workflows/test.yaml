@@ -1,13 +1,11 @@
+name: Manual workflow
+
 on:
-  push:
-    
+  workflow_dispatch:
+
 jobs:
-  example_matrix:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        version: [14, 16, 18]
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.version }}
+      - name: Get the version
+        run: echo "Hello World"
